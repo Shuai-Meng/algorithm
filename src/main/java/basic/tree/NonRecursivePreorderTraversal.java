@@ -1,6 +1,7 @@
 package basic.tree;
 
 import basic.stack.Stack;
+import basic.util.CallBack;
 
 /**
  * @Author mengshuai
@@ -8,13 +9,13 @@ import basic.stack.Stack;
  */
 public class NonRecursivePreorderTraversal {
 
-    public static <T> void traversal(TreeNode<T> treeNode) {
+    public static <T> void traversal(TreeNode<T> treeNode, CallBack<T> callBack) {
         Stack<TreeNode> stack = new Stack<>();
         TreeNode<T> root = treeNode;
 
         while (true) {
             while (root != null) {
-                System.out.println(root.getData());
+                callBack.call(root.getData(), null);
                 stack.push(root);
                 root = root.getLeft();
             }

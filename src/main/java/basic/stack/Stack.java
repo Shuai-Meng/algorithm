@@ -11,6 +11,8 @@ public class Stack<T> {
     private int index = -1;
 
     public Stack(int vol) {
+        int a = 100;
+        System.out.println("init");
         this.vol = vol;
         stack = (T[]) new Object[vol];
     }
