@@ -1,5 +1,8 @@
+import basic.tree.FindMaxNode;
 import basic.tree.TreeNode;
 import basic.tree.NonRecursivePreorderTraversal;
+import basic.util.CallBack;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -8,7 +11,7 @@ import org.junit.Test;
  * @Author mengshuai
  * @Date 2019/8/4
  */
-public class TreeNodeTests {
+public class TreeNodeTest {
     private TreeNode<Integer> root;
 
     @Before
@@ -23,8 +26,15 @@ public class TreeNodeTests {
     }
 
     @Test
-    @Ignore
     public void testTraversal() {
-        NonRecursivePreorderTraversal.traversal(root, null);
+        NonRecursivePreorderTraversal.traversal(root, t -> {
+            System.out.println(t.getData());
+            return null;
+        });
+    }
+
+    @Test
+    public void testFindMaxNode() {
+        Assert.assertEquals(91, (int) FindMaxNode.max(root).getData());
     }
 }
