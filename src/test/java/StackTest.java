@@ -6,7 +6,7 @@ import org.junit.Test;
  * @Author mengshuai
  * @Date 2019/8/4
  */
-public class StackTests {
+public class StackTest {
 
     @Test
     public void testPush() {

@@ -8,7 +8,7 @@ import org.junit.Test;
  * @Author mengshuai
  * @Date 2019/8/4
  */
-public class TreeNodeTests {
+public class TreeNodeTest {
     private TreeNode<Integer> root;
 
     @Before
