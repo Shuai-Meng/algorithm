@@ -8,9 +8,9 @@ import basic.util.CallBack;
  */
 public class PreorderTraversal {
 
-    public static <T> void traversal(TreeNode<T> treeNode, CallBack<T> callBack) {
-        if (treeNode != null) {
-            callBack.call(treeNode.getData());
+    public static <T> void traversal(TreeNode<T> treeNode, CallBack callBack) {
+        if (treeNode != null && callBack != null) {
+            callBack.call(treeNode);
             traversal(treeNode.getLeft(), callBack);
             traversal(treeNode.getRight(), callBack);
         }

@@ -9,13 +9,13 @@ import basic.util.CallBack;
  */
 public class NonRecursivePreorderTraversal {
 
-    public static <T> void traversal(TreeNode<T> treeNode, CallBack<T> callBack) {
+    public static <T> void traversal(TreeNode<T> treeNode, CallBack callBack) {
         Stack<TreeNode> stack = new Stack<>();
         TreeNode<T> root = treeNode;
 
         while (true) {
-            while (root != null) {
-                callBack.call(root.getData(), null);
+            while (root != null && callBack != null) {
+                callBack.call(root);
                 stack.push(root);
                 root = root.getLeft();
             }

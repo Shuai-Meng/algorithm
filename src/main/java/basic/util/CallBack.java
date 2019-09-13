@@ -1,9 +1,11 @@
 package basic.util;
 
+import basic.tree.TreeNode;
+
 /**
  * @Author mengshuai
  * @Date 2019/8/6
  */
-public interface CallBack<T> {
-    void call(T t, Object... object);
+public interface CallBack {
+    Object call(TreeNode t);
 }
