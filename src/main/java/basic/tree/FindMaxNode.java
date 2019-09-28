@@ -8,12 +8,13 @@ import basic.util.CallBack;
  */
 public class FindMaxNode {
 
-    public static TreeNode<Integer> max(TreeNode<Integer> treeNode) {
-        final TreeNode<Integer>[] result = new TreeNode[]{new TreeNode<>(0)};
+    public static TreeNode<Comparable> max(TreeNode<Comparable> treeNode) {
+        final TreeNode<Comparable>[] result = new TreeNode[1];
 
-        CallBack callBack = t -> {
-            Integer a = (Integer) t.getData();
-            if (a > result[0].getData()) {
+        CallBack<TreeNode<Comparable>> callBack = t -> {
+            if (t == null || result[0] == null) {
+                result[0] = t;
+            } else if (t.getData().compareTo(result[0].getData()) > 0) {
                 result[0] = t;
             }
             return null;

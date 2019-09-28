@@ -29,4 +29,15 @@ public class RepeatNumInArrayTest {
         int[] a = new int[] {-1, 2, 3};
         RepeatNumInArray.findRepeat(a);
     }
+
+    @Test(expected = NullPointerException.class)
+    public void testExp2() {
+        int[] a = new int[]{};
+        RepeatNumInArray.findRepeat(a);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void testExp3() {
+        RepeatNumInArray.findRepeat(null);
+    }
 }

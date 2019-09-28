@@ -7,6 +7,10 @@ package offer;
 public class RepeatNumInArray {
 
     public static int findRepeat(int[] array) {
+        if (array == null || array.length == 0) {
+            throw new NullPointerException();
+        }
+
         for (int i = 0; i < array.length; i++) {
             if (array[i] >= array.length || array[i] < 0) {
                 throw new IndexOutOfBoundsException();

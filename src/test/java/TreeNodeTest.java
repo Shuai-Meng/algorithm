@@ -12,7 +12,7 @@ import org.junit.Test;
  * @Date 2019/8/4
  */
 public class TreeNodeTest {
-    private TreeNode<Integer> root;
+    private TreeNode<Comparable> root;
 
     @Before
     public void create() {
@@ -27,10 +27,12 @@ public class TreeNodeTest {
 
     @Test
     public void testTraversal() {
-        NonRecursivePreorderTraversal.traversal(root, t -> {
+        CallBack<TreeNode> callBack = t -> {
             System.out.println(t.getData());
             return null;
-        });
+        };
+
+        NonRecursivePreorderTraversal.traversal(root, callBack);
     }
 
     @Test
