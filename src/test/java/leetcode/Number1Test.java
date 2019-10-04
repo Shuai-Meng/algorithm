@@ -16,14 +16,14 @@ public class Number1Test {
 
     @Test
     public void testAlpha() {
-        int[] res = Number1.twoSumAlpha(nums, target);
+        int[] res = Number1.twoSumA(nums, target);
         Assert.assertEquals(0, res[0]);
         Assert.assertEquals(1, res[1]);
     }
 
     @Test
     public void testBeta() {
-        int[] res = Number1.twoSumBeta(nums, target);
+        int[] res = Number1.twoSumB(nums, target);
         Assert.assertEquals(0, res[0]);
         Assert.assertEquals(1, res[1]);
     }
