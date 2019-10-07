@@ -4,6 +4,8 @@ import leetcode.easy.Number1;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Arrays;
+
 /**
  * @Author mengshuai
  * @Date 2019/9/28
@@ -11,20 +13,26 @@ import org.junit.Test;
 public class Number1Test {
 
 
-    private int[] nums = {2,7,11,15};
-    private int target = 9;
-
     @Test
-    public void testAlpha() {
-        int[] res = Number1.twoSumA(nums, target);
-        Assert.assertEquals(0, res[0]);
-        Assert.assertEquals(1, res[1]);
+    public void testA() {
+        int[] nums = {2,7,11,15};
+
+        int[] res = Number1.twoSumA(nums, 9);
+        Assert.assertTrue(Arrays.equals(new int[] {0, 1}, res));
+
+        nums = new int[] {3, 3};
+        res = Number1.twoSumA(nums, 6);
+        Assert.assertTrue(Arrays.equals(new int[] {0, 1}, res));
     }
 
     @Test
-    public void testBeta() {
-        int[] res = Number1.twoSumB(nums, target);
-        Assert.assertEquals(0, res[0]);
-        Assert.assertEquals(1, res[1]);
+    public void testB() {
+        int[] nums = {2,7,11,15};
+        int[] res = Number1.twoSumB(nums, 9);
+        Assert.assertTrue(Arrays.equals(new int[] {1, 0}, res));
+
+        nums = new int[] {3, 3};
+        res = Number1.twoSumB(nums, 6);
+        Assert.assertTrue(Arrays.equals(new int[] {1, 0}, res));
     }
 }

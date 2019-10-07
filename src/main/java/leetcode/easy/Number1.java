@@ -47,7 +47,7 @@ public class Number1 {
         Map<Integer, Integer> map = new HashMap<>(1);
         for (int i = 0; i < nums.length; i++) {
             int complement = target - nums[i];
-            if (map.get(complement) != null && complement != nums[i]) {
+            if (map.get(complement) != null) {
                 return new int[]{i, map.get(complement)};
             } else {
                 map.put(nums[i], i);
