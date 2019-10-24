@@ -34,7 +34,7 @@ public class TreeNodeTest {
             return null;
         };
 
-        NonRecursivePreorderTraversal.traversal(root, callBack);
+        root.nonRecursivePreorderTraversal(callBack);
     }
 
     @Test
