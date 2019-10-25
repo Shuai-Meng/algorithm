@@ -38,6 +38,22 @@ public class TreeNodeTest {
     }
 
     @Test
+    public void testEquals() {
+        TreeNode treeNode1 = new TreeNode(0);
+        TreeNode treeNode2 = new TreeNode(1);
+        TreeNode treeNode3 = new TreeNode(0);
+
+        Assert.assertFalse(treeNode1.equals(null));
+        Assert.assertFalse(treeNode1.equals(5));
+        Assert.assertFalse(treeNode1.equals(treeNode2));
+        Assert.assertTrue(treeNode1.equals(treeNode1));
+        Assert.assertTrue(treeNode1.equals(treeNode3));
+
+        treeNode3.setRight(treeNode2);
+        Assert.assertTrue(treeNode1.equals(treeNode3));
+    }
+
+    @Test
     public void testTreeEquals() {
         Assert.assertTrue(TreeNode.treeEquals(root1, root2));
     }

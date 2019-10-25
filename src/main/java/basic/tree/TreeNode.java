@@ -101,7 +101,7 @@ public class TreeNode<T> {
     @Override
     public boolean equals(Object tTreeNode) {
         if (tTreeNode == null) {
-            return this == null;
+            return false;
         }
 
         if (!(tTreeNode instanceof TreeNode)) {
