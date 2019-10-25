@@ -58,26 +58,28 @@ public class TreeNode<T> {
         this.right = right;
     }
 
-    public void preorderTraversal(CallBack callBack) {
+    public static void preorderTraversal(TreeNode treeNode, CallBack callBack) {
         if (callBack == null) {
             return;
         }
 
-        TreeNode treeNode = this;
-
         if (treeNode != null) {
-            callBack.call(treeNode);
-            preorderTraversal(callBack);
-            preorderTraversal(callBack);
+            callBack.call(treeNode.data);
+            preorderTraversal(treeNode.left, callBack);
+            preorderTraversal(treeNode.right, callBack);
         }
     }
 
     public void nonRecursivePreorderTraversal(CallBack callBack) {
+        if (callBack == null) {
+            return;
+        }
+
         Stack<TreeNode> stack = new Stack<>();
         TreeNode<T> root = this;
 
         while (true) {
-            while (root != null && callBack != null) {
+            while (root != null) {
                 callBack.call(root);
                 stack.push(root);
                 root = root.getLeft();
@@ -91,6 +93,11 @@ public class TreeNode<T> {
         }
     }
 
+    /**
+     * compared as node, only member data considered
+     * @param tTreeNode node to be compared
+     * @return whether two nodes' data equals
+     */
     @Override
     public boolean equals(Object tTreeNode) {
         if (tTreeNode == null) {
@@ -109,7 +116,31 @@ public class TreeNode<T> {
         return data.equals(this.data);
     }
 
-    public boolean treeEquals(TreeNode treeNode) {
+    /**
+     * compare two trees
+     * @param p param to be compared which treated as root
+     * @param q param to be compared which treated as root
+     * @return true if each node of two trees in correspond position equals
+     */
+    public static boolean treeEquals(TreeNode p, TreeNode q) {
+
+        if (p != null && q != null) {
+            if (!p.equals(q)) {
+                return false;
+            }
+
+            if (!treeEquals(p.left, q.left)) {
+                return false;
+            }
+            if (!treeEquals(p.right, q.right)) {
+                return false;
+            }
+        }
+
+        if (p == null && q == null) {
+            return true;
+        }
+
         return false;
     }
 }

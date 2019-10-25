@@ -20,7 +20,7 @@ public class FindMaxNode {
             return null;
         };
 
-        NonRecursivePreorderTraversal.traversal(treeNode, callBack);
+        TreeNode.preorderTraversal(treeNode, callBack);
         return result[0];
     }
 }
