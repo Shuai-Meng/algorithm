@@ -1,6 +1,5 @@
-package basic.tree;
+package basic;
 
-import basic.stack.Stack;
 import basic.util.CallBack;
 
 /**
@@ -22,16 +21,16 @@ public class TreeNode<T> {
         this.right = right;
     }
 
-    public static TreeNode createTree(TreeNode[] tree) {
-        for (int i = 0; i < tree.length; i++) {
-            if (2 * i <= tree.length - 2) {
-                tree[i].setLeft(tree[i * 2 + 1]);
+    public static TreeNode createTree(TreeNode[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            if (2 * i <= arr.length - 2) {
+                arr[i].setLeft(arr[i * 2 + 1]);
             }
-            if (2 * i <= tree.length - 3) {
-                tree[i].setRight(tree[i * 2 + 2]);
+            if (2 * i <= arr.length - 3) {
+                arr[i].setRight(arr[i * 2 + 2]);
             }
         }
-        return tree[0];
+        return arr[0];
     }
 
     public T getData() {

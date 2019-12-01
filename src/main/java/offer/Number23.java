@@ -1,6 +1,6 @@
 package offer;
 
-import basic.list.ListNode;
+import basic.ListNode;
 
 /**
  * @Author: mengshuai

@@ -1,5 +1,7 @@
 package basic.list;
 
+import basic.ListNode;
+
 /**
  * @Author mengshuai
  * @Date 2019/11/20

@@ -1,9 +1,8 @@
 package leetcode;
 
-import basic.list.ListNode;
+import basic.ListNode;
 import leetcode.medium.Number2;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 

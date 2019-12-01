@@ -1,6 +1,5 @@
 package basic;
 
-import basic.stack.Stack;
 import org.junit.Assert;
 import org.junit.Test;
 

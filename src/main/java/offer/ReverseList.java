@@ -1,9 +1,7 @@
 package offer;
 
-import basic.list.ListNode;
-import basic.stack.Stack;
-
-import java.util.List;
+import basic.ListNode;
+import basic.Stack;
 
 /**
  * @Author mengshuai

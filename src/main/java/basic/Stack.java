@@ -1,4 +1,4 @@
-package basic.stack;
+package basic;
 
 /**
  * @Author mengshuai
