@@ -1,4 +1,4 @@
-package basic.list;
+package basic;
 
 /**
  * @Author mengshuai

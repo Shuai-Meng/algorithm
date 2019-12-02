@@ -1,10 +1,9 @@
 package basic;
 
 import basic.tree.FindMaxNode;
-import basic.tree.TreeNode;
 import basic.util.CallBack;
 import org.junit.Assert;
-import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
@@ -16,7 +15,7 @@ public class TreeNodeTest {
     int[] arr = {13,22,33,84,25,63,57,48,91};
     private TreeNode<Comparable> root1, root2;
 
-    @Before
+    @BeforeClass
     public void create() {
         TreeNode[] tree = new TreeNode[arr.length];
         for (int i = 0; i < arr.length; i++) {
