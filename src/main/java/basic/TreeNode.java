@@ -10,6 +10,7 @@ public class TreeNode<T> {
     private T data;
     private TreeNode<T> left;
     private TreeNode<T> right;
+    private TreeNode<T> parent;
 
     public TreeNode(T t) {
         this(t, null, null);
@@ -55,6 +56,14 @@ public class TreeNode<T> {
 
     public void setRight(TreeNode<T> right) {
         this.right = right;
+    }
+
+    public TreeNode<T> getParent() {
+        return parent;
+    }
+
+    public void setParent(TreeNode<T> parent) {
+        this.parent = parent;
     }
 
     public static void preorderTraversal(TreeNode treeNode, CallBack callBack) {
