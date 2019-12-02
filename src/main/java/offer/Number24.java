@@ -9,7 +9,7 @@ import java.util.List;
  * @Author mengshuai
  * @Date 2019/11/20
  */
-public class ReverseList {
+public class Number24 {
     public static ListNode reverse(final ListNode head) {
         ListNode res = new ListNode();
         ListNode cur = head;
