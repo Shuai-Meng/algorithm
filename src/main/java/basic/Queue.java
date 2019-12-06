@@ -40,6 +40,7 @@ public class Queue<T> {
         }
 
         T tmp = array[head];
+        array[head] = null;
         head = (head + 1) % capacity;
         return tmp;
     }

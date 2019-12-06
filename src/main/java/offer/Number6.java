@@ -1,7 +1,7 @@
 package offer;
 
-import basic.list.ListNode;
-import basic.stack.Stack;
+import basic.ListNode;
+import basic.Stack;
 
 /**
  * @Author: mengshuai

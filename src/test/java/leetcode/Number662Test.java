@@ -3,7 +3,6 @@ package leetcode;
 import basic.TreeNode;
 import leetcode.medium.Number662;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 /**

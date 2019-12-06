@@ -22,26 +22,31 @@ public class Number662 {
         int next = 0;
         int max = 0;
 
+        int head = 0;
+        boolean flag = true;
         while (queue.getSize() != 0) {
             TreeNode tmp = queue.dequeue();
             tier.push(tmp);
 
-            int head = 0;
-            boolean flag = true;
-            if (tmp == null && flag) {
-                head++;
-            }
-
-            if (tmp != null) {
+            if (tmp == null) {
+                if (flag) {
+                    head++;
+                }
+                queue.enqueue(null);
+                queue.enqueue(null);
+            } else {
                 flag = false;
                 queue.enqueue(tmp.getLeft());
                 queue.enqueue(tmp.getRight());
-                next = next + 2;
             }
+            next = next + 2;
 
 
             cur--;
             if (cur == 0) {
+                if (flag) {
+                    break;
+                }
                 int width = tierWidth - getTail(tier) - head;
                 if (width > max) {
                     max = width;
@@ -50,6 +55,8 @@ public class Number662 {
                 cur = next;
                 tierWidth = cur;
                 next = 0;
+                head = 0;
+                flag = true;
             }
         }
 
