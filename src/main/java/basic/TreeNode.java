@@ -1,5 +1,6 @@
 package basic;
 
+import apple.laf.JRSUIUtils;
 import basic.util.CallBack;
 
 /**
@@ -98,6 +99,52 @@ public class TreeNode<T> {
             }
 
             root = stack.pop().getRight();
+        }
+    }
+
+    public void inOrderTraverse(CallBack callBack) {
+        if (callBack == null) {
+            return;
+        }
+
+        TreeNode root = this;
+        Stack stack = new Stack();
+        while (true) {
+            while (root != null) {
+                stack.push(root);
+                root = root.getLeft();
+            }
+
+            if (stack.getSize() == 0) {
+                break;
+            }
+
+            root = (TreeNode) stack.pop();
+            callBack.call(root);
+            root = root.getRight();
+        }
+    }
+
+    public void postOrderTraverse(CallBack callBack) {
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode root = this;
+
+        while (true) {
+            while (root != null) {
+                stack.push(root);
+                root = root.getLeft();
+            }
+
+            if (stack.getSize() == 0) {
+                break;
+            }
+
+            TreeNode tmp = stack.top();
+            if (tmp.getRight() != null) {
+                root = tmp.getRight();
+            } else {
+                callBack.call(stack.pop());
+            }
         }
     }
 
