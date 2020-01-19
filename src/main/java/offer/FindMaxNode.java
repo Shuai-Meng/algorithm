@@ -1,7 +1,7 @@
-package basic.tree;
+package offer;
 
 import basic.TreeNode;
-import basic.util.CallBack;
+import util.CallBack;
 
 /**
  * @Author mengshuai
@@ -21,7 +21,7 @@ public class FindMaxNode {
             return null;
         };
 
-        TreeNode.preorderTraversal(treeNode, callBack);
+        treeNode.preorderTraversal(callBack);
         return result[0];
     }
 }

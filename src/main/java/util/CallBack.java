@@ -1,4 +1,4 @@
-package basic.util;
+package util;
 
 /**
  * @Author mengshuai

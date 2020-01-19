@@ -1,7 +1,6 @@
 package basic;
 
-import apple.laf.JRSUIUtils;
-import basic.util.CallBack;
+import util.CallBack;
 
 /**
  * @Author mengshuai
@@ -67,19 +66,7 @@ public class TreeNode<T> {
         this.parent = parent;
     }
 
-    public static void preorderTraversal(TreeNode treeNode, CallBack callBack) {
-        if (callBack == null) {
-            return;
-        }
-
-        if (treeNode != null) {
-            callBack.call(treeNode.data);
-            preorderTraversal(treeNode.left, callBack);
-            preorderTraversal(treeNode.right, callBack);
-        }
-    }
-
-    public void nonRecursivePreorderTraversal(CallBack callBack) {
+    public void preorderTraversal(CallBack callBack) {
         if (callBack == null) {
             return;
         }

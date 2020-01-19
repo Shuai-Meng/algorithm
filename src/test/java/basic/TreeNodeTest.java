@@ -1,7 +1,7 @@
 package basic;
 
-import basic.tree.FindMaxNode;
-import basic.util.CallBack;
+import offer.FindMaxNode;
+import util.CallBack;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -33,7 +33,7 @@ public class TreeNodeTest {
             return null;
         };
 
-        root1.nonRecursivePreorderTraversal(callBack);
+        root1.preorderTraversal(callBack);
     }
 
     @Test
