@@ -115,6 +115,7 @@ public class TreeNode<T> {
     public void postOrderTraverse(CallBack callBack) {
         Stack<TreeNode> stack = new Stack<>();
         TreeNode root = this;
+        TreeNode pre = null;
 
         while (true) {
             while (root != null) {
@@ -126,11 +127,12 @@ public class TreeNode<T> {
                 break;
             }
 
-            TreeNode tmp = stack.top();
-            if (tmp.getRight() != null) {
-                root = tmp.getRight();
+            TreeNode top = stack.top();
+            if (top.getRight() != null && top.getRight() != pre) {
+                root = top.getRight();
             } else {
                 callBack.call(stack.pop());
+                pre = top;
             }
         }
     }
